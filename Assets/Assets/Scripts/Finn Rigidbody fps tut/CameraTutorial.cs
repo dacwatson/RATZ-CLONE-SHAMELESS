@@ -24,7 +24,6 @@ public class CameraTutorial : MonoBehaviour
     }
 
 
-
     void Update()
     {
         if(Input.GetKey(KeyCode.Space) && Physics.Raycast(rb.transform.position, Vector3.down, 1 + 0.001f))
@@ -61,11 +60,9 @@ public class CameraTutorial : MonoBehaviour
 
     void Movement()
     {
-        // https://learn.unity.com/tutorial/getaxis-o#5c8a647fedbc2a0020d980a4
-        // Above video explains the differences between getting button presses and GetAxis.
-        // GetAxis allows to tweak how movement feels using gravity, etc.
-
-
+    // https://learn.unity.com/tutorial/getaxis-o#5c8a647fedbc2a0020d980a4
+    // Above video explains the differences between getting button presses and GetAxis.
+    // GetAxis allows to tweak how movement feels using gravity, etc.
 
         // a Vector2 is a 2D vector.
             // define horizontal and vertical axes and multiply by walkspeed
@@ -83,4 +80,11 @@ public class CameraTutorial : MonoBehaviour
         Vector3 wishDirection = (forward * axis.x + Camera.main.transform.right * axis.y + Vector3.up * rb.velocity.y);
         rb.velocity = wishDirection;
     }
+
+
+    // void Boost()
+    // {
+    //     rb.velocity -= Camera.localRotation;
+    // }
+
 }
